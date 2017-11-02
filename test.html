@@ -1,0 +1,13 @@
+<body>
+<h1> demo </h1>
+
+<script>
+  var el = document.createElement('h1')
+  document.body.appendChild(el)
+  el.innerText = '1'
+  setInterval(function () {
+      el.innerText = +el.innerText + 1
+    
+  }, 100)
+</script>
+</body>
