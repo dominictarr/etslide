@@ -99,8 +99,9 @@ for(var i = 0; i < exec.length; i++) {
   slide.replaceChild(script, exec[i].parentNode)
 }
 
-var prev = 0
+var prev = -1
 function update (n) {
+  if(n === prev) return
   //check if this slide has a javascript embed
   if(n != prev && demos[prev])
     demos[prev].dispatchEvent(new CustomEvent('blur', {target: demos[prev], updated: n}))
@@ -126,14 +127,4 @@ window.onkeydown = function (ev) {
 
   update(slide)
 }
-
-
-
-
-
-
-
-
-
-
 
